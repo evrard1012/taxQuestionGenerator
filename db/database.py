@@ -6,7 +6,7 @@ import sqlite3
 class Database:
 
     
-    def __init__(self, name='/Users/evrard/Documents/PYGescom/db/gescom.db'):
+    def __init__(self, name='/Users/evrard/Documents/alino/db/gescom.db'):
         
         self.conn = None
         self.cursor = None
