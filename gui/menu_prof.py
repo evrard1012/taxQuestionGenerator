@@ -46,7 +46,7 @@ class Home:
         
 
         self.btnLogin=Button(self.LoginFrame1,text = 'DECONNECTER',width=25,command=self.iExit,bg='blue')#self.new_window#
-        self.btnLogin.grid(row=3,column=1,pady=30,padx=10)
+        self.btnLogin.grid(row=0,column=1,pady=30,padx=10)
 
         #----------------------------------fonction -------------------------
 

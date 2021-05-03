@@ -69,21 +69,14 @@ class Login:
         user = udao.login(u,p)
         if user is not None :
             iduser=user[0]
-            idoffice=user[6]
             print('welcome')
-            profil = user[3]
+            profil = user[4]
             if profil == 1:
-                print('admin')
-                self.command()
+                print('student')
+                self.command_st()
             elif profil ==2:
-                print('commercant')
-                self.command_com()
-            elif profil ==3:
-                print('gestionnaire fournisseur')
-                self.command_gf()
-            elif profil ==4:
-                print('gestionnaire stock')
-                self.command_gs()
+                print('enseignant')
+                self.command_ens()
             else:
                 print('erreur')
         else:
@@ -103,26 +96,16 @@ class Login:
     def new_window(self):
         self.newWindow=Toplevel(self.master)
         #self.app=Window2(self.newWindow)
-    def command(self):
+    def command_st(self):
         self.master.withdraw()
         toplevel = tk.Toplevel(self.master)
         toplevel.geometry("350x350")
         app = MenuUser(toplevel)
-    def command_com(self):
+    def command_ens(self):
         self.master.withdraw()
         toplevel = tk.Toplevel(self.master)
         toplevel.geometry("350x350")
-        app = cp.CommanderHome(toplevel)
-    def command_gs(self):
-        self.master.withdraw()
-        toplevel = tk.Toplevel(self.master)
-        toplevel.geometry("350x350")
-        app = Home(toplevel)
-    def command_gf(self):
-        self.master.withdraw()
-        toplevel = tk.Toplevel(self.master)
-        toplevel.geometry("350x350")
-        app = HomeGestFournisseur(toplevel)        
+        app = Home(toplevel)      
 
 root = tk.Tk()
 root.title("window")
