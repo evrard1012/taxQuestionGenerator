@@ -10,14 +10,14 @@ def execr():
 
 def main():
     root=Tk()
-    app=Window_Accueil_Ensiegnant(root)
+    app=Window_Accueil_Enseignant(root)
 
-class Window_Accueil_Ensiegnant:
+class Window_Accueil_Enseignant:
 
     def __init__(self, master):
         self.master=master
         self.master.title("Page Accueil")
-        self.master.geometry("650x650")
+        self.master.geometry("800x650")
         self.master.config(bg="powder blue")
 
         
@@ -85,7 +85,7 @@ class Window_Accueil_Ensiegnant:
         self.btnMts.grid(row=5,column=1,pady=20,padx=10)
 
         ######################deconexion
-        self.btnDcx=Button(self.frame3,text = 'deconexion',width=17,command=self.valider())
+        self.btnDcx=Button(self.frame3,text = 'deconexion',width=17,command=self.iExit)
         self.btnDcx.grid(row=0,column=0,pady=20,padx=10)
 
     def valider(self):
@@ -121,9 +121,23 @@ class Window_Accueil_Ensiegnant:
             time.sleep(1)
         pb1.destroy()
         self.nomFichier.set('')
-        ttk.messagebox.askyesno('fichier charge avec success !!')
-        Label(self.frame4, text='File Uploaded Successfully!',
-              foreground='green').grid(row=2, pady=10)
+        messagebox.showinfo("WayToLearnX", "Welcome to WayToLearnX!")
+        
+
+    def iExit(self):
+        self.iExit=messagebox.askyesno('Voulez vous vraiment quitter !!')
+        if self.iExit>0:
+            self.master.destroy()
+
+
+
+
+
+
+
+
+
+    
 
 
 
