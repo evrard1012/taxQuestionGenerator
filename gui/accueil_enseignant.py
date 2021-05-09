@@ -121,7 +121,7 @@ class Window_Accueil_Enseignant:
             time.sleep(1)
         pb1.destroy()
         self.nomFichier.set('')
-        messagebox.showinfo("WayToLearnX", "Welcome to WayToLearnX!")
+        messagebox.showinfo("Alert", "chargement Complet")
         
 
     def iExit(self):
