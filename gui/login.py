@@ -9,7 +9,7 @@ import datetime
 import alino.entity.users as usr
 import alino.dao.userdao as udao
 from menu_student import MenuUser
-from menu_prof import Home
+from accueil_enseignant import Window_Accueil_Ensiegnant
 
 class Login:
     iduser=0
@@ -21,8 +21,9 @@ class Login:
         self.filename = PhotoImage(file = "background3.png")
         w = self.master.winfo_screenwidth()
         h = self.master.winfo_screenheight()
-        self.master.geometry("%dx%d+0+0" % (w, h))
-        
+        self.master.geometry("%dx%d+0+0" % (800, 600))
+
+        #800x450
         #self.master.geometry('1350x750+0+0')
         self.master.config(bg="powder blue")
 
@@ -33,6 +34,7 @@ class Login:
         
         self.frame=Frame(self.master,bg="grey")
         self.frame.pack()
+        self.frame.place(in_=self.master, anchor="c", relx=.5, rely=.5)
 
         self.Username=StringVar()
         self.PassWord=StringVar()
@@ -105,7 +107,7 @@ class Login:
         self.master.withdraw()
         toplevel = tk.Toplevel(self.master)
         toplevel.geometry("350x350")
-        app = Home(toplevel)      
+        app = Window_Accueil_Ensiegnant(toplevel)      
 
 root = tk.Tk()
 root.title("window")

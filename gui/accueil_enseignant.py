@@ -17,7 +17,7 @@ class Window_Accueil_Ensiegnant:
     def __init__(self, master):
         self.master=master
         self.master.title("Page Accueil")
-        self.master.geometry("650x650")
+        self.master.geometry("850x600")
         self.master.config(bg="powder blue")
 
         
@@ -129,5 +129,5 @@ class Window_Accueil_Ensiegnant:
 
     
 
-main()
+#main()
 
