@@ -121,9 +121,29 @@ class Window_Accueil_Ensiegnant:
             time.sleep(1)
         pb1.destroy()
         self.nomFichier.set('')
+<<<<<<< HEAD
         ttk.messagebox.askyesno('fichier charge avec success !!')
         Label(self.frame4, text='File Uploaded Successfully!',
               foreground='green').grid(row=2, pady=10)
+=======
+        messagebox.showinfo("Alert", "chargement Complet")
+        
+
+    def iExit(self):
+        self.iExit=messagebox.askyesno('Voulez vous vraiment quitter !!')
+        if self.iExit>0:
+            self.master.destroy()
+
+
+
+
+
+
+
+
+
+    
+>>>>>>> 3b11afa32676cc895c85e1218aeebe5414ac7564
 
 
 
