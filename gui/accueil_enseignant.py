@@ -81,7 +81,7 @@ class Window_Accueil_Enseignant:
         self.ent1=Entry(self.montantFrame,textvariable=self.montants,width=55)
         self.ent1.grid(row=5,column=0,padx=5,pady=3)
         ########################## boutton
-        self.btnMts=Button(self.montantFrame,text = 'valider',width=17,command=self.valider())
+        self.btnMts=Button(self.montantFrame,text = 'valider',width=17,command=self.valider)
         self.btnMts.grid(row=5,column=1,pady=20,padx=10)
 
         ######################deconexion
@@ -90,7 +90,11 @@ class Window_Accueil_Enseignant:
 
     def valider(self):
         list_montants=self.montants.get()
-        self.montants.set('')
+        if not list_montants:
+            messagebox.showinfo("Alert", "Veillez bien renseigner les montants!!!")
+        else:
+            messagebox.showinfo("Alert", "chargement Complet")
+            self.montants.set('')
         print(list_montants)
 
 
@@ -110,18 +114,22 @@ class Window_Accueil_Enseignant:
             
 
     def uploadFiles(self):
-        pb1 = ttk.Progressbar(self.frame4,
+        if self.nomFichier.get()!='':
+            """pb1 = ttk.Progressbar(self.frame4,
                       orient=HORIZONTAL,
                       length=300,
                       mode='determinate')
-        pb1.grid(row=1, pady=20)
-        for i in range(5):
-            self.frame4.update_idletasks()
-            pb1['value'] += 20
-            time.sleep(1)
-        pb1.destroy()
-        self.nomFichier.set('')
-        messagebox.showinfo("Alert", "chargement Complet")
+            pb1.grid(row=1, pady=20)
+            for i in range(5):
+                self.frame4.update_idletasks()
+                pb1['value'] += 20
+                time.sleep(1)
+                pb1.destroy()
+                self.nomFichier.set('')"""
+            messagebox.showinfo("Alert", "chargement Complet")
+            self.nomFichier.set('')
+        else:
+            messagebox.showinfo("Alert", "chargez le fichier svp!!!")
         
 
     def iExit(self):
